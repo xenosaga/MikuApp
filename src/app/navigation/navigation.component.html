@@ -1,10 +1,21 @@
-<mat-sidenav-container class="example-container">
-  <mat-sidenav #drawer mode="side" opened role="navigation">
-    <mat-nav-list>
-      <a mat-list-item routerLink='/first'>First Component</a>
-      <a mat-list-item routerLink='/second'>Second Component</a>
+<!-- top-menu -->
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-button type="button" (click)="drawer.toggle()"><mat-icon>menu</mat-icon></button>
+    <button mat-button routerLink="/home">Home</button>
+    <button mat-button routerLink="/about">About</button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container color=primary class="function-sidenva-container" autosize>
+  <mat-sidenav #drawer mode="push" closed role="navigation" class="sidenav-style">
+   <mat-toolbar color="primary">Quick Link</mat-toolbar>
+   <mat-nav-list>
+      <a mat-list-item>Item 1</a>
+      <a mat-list-item>Item 2</a>
     </mat-nav-list>
   </mat-sidenav>
+
   <mat-sidenav-content>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
