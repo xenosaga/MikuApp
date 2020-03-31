@@ -1,0 +1,25 @@
+.panel {
+  margin: 20px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  min-width: 500px;
+}
+
+.chat-header {
+  padding: 20px;
+  background-color: coral;
+}
+
+.chat-body {
+  padding: 20px;
+  height: 60%;
+  background-color: bisque;
+}
+
+.chat-input {
+  padding: 20px;
+  background-color: burlywood;
+}

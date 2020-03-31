@@ -1,23 +1,20 @@
-<mat-grid-list cols="3"  class="panel-style">
-  <mat-grid-tile *ngFor="let tile of tiles"
-    [colspan]="tile.cols"
-    [rowspan]="tile.rows"
-    [style.background] = "tile.color">
-
-    <mat-card class="card-style">
-      <mat-card-header>
-        <mat-card-title class="card-title-style">{{tile.cardTitle}}</mat-card-title>
-      </mat-card-header>
-
-      <a routerLink={{tile.routerLink}}>
-        <mat-icon class="card-icon-style">{{tile.cardIcon}}</mat-icon>
-      </a>
-
-      <mat-card-content>
-        content
-      </mat-card-content>
-<router-outlet></router-outlet>
-    </mat-card>
-  </mat-grid-tile>
-
-</mat-grid-list>
+<div class="grid-container">
+  <h1 class="mat-h1">Dashboard</h1>
+  <mat-grid-list cols="3" rowHeight="350px">
+    <mat-grid-tile *ngFor="let card of cards">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            {{card.title}}
+          </mat-card-title>
+        </mat-card-header>
+        <a routerLink={{card.link}}>
+          <img mat-card-img src={{card.img}}/>
+        </a>
+        <mat-card-content class="dashboard-card-content">
+          <div>{{card.content}}</div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

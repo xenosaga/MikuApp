@@ -7,9 +7,16 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select'
+
+
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 const material =
 [
+  FlexLayoutModule,
   MatMenuModule,
   MatButtonModule,
   MatToolbarModule,
@@ -18,6 +25,9 @@ const material =
   MatListModule,
   MatGridListModule,
   MatCardModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatSelectModule,
 ];
 
 @NgModule({

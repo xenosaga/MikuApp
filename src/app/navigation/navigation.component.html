@@ -1,18 +1,32 @@
 <!-- top-menu -->
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" class="top-menu">
   <mat-toolbar-row>
-    <button mat-button type="button" (click)="drawer.toggle()"><mat-icon>menu</mat-icon></button>
-    <button mat-button routerLink="/home">Home</button>
-    <button mat-button routerLink="/about">About</button>
+    <button mat-button type="button" (click)="drawer.toggle()">
+      <mat-icon>{{ drawer.opened ? 'close': 'menu' }}</mat-icon>
+    </button>
+    <span> Miku app </span>
+    <span class="top-menu-seprator"></span>
+    <button mat-button><mat-icon>search</mat-icon></button>
+    <button mat-button><mat-icon>exit_to_app</mat-icon></button>
   </mat-toolbar-row>
 </mat-toolbar>
 
-<mat-sidenav-container color=primary class="function-sidenva-container" autosize>
-  <mat-sidenav #drawer mode="push" closed role="navigation" class="sidenav-style">
-   <mat-toolbar color="primary">Quick Link</mat-toolbar>
-   <mat-nav-list>
-      <a mat-list-item>Item 1</a>
-      <a mat-list-item>Item 2</a>
+<mat-sidenav-container color=primary class="miku-app-container">
+  <mat-sidenav #drawer mode="push" closed role="navigation" class="miku-app-sidenav">
+    <mat-toolbar color="primary">Quick Link</mat-toolbar>
+    <mat-nav-list>
+      <h3 matSubheader>Jump</h3>
+      <a mat-list-item routerLink="/home">Home</a>
+      <a mat-list-item routerLink="/chat-room">Chat</a>
+      <a mat-list-item routerLink="/manage">Manage</a>
+      <a mat-list-item routerLink="/about">Help</a>
+      <a mat-list-item routerLink="/search">Search</a>
+
+      <mat-divider></mat-divider>
+
+      <h3 matSubheader>Chat room</h3>
+      <a mat-list-item routerLink="/chat-barby">Chat 1</a>
+      <a mat-list-item routerLink="/chat-moe">Chat 2</a>
     </mat-nav-list>
   </mat-sidenav>
 

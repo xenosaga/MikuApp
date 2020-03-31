@@ -1,9 +1,21 @@
-
-.function-sidenva-container {
-  height: 90%;
-  flex: 1;
+.miku-app-container,
+.miku-app-sidenav {
+  /* position: absolute; */
+  padding-top: 64px;
+  height: calc(100vh - 64px);
 }
 
-.sidenav-style {
+.miku-app-sidenav {
   width: 20%;
+}
+
+
+.top-menu {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+
+.top-menu-seprator {
+  flex: 1 1 auto;
 }
