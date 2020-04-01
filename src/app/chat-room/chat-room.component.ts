@@ -12,9 +12,15 @@ export class ChatRoomComponent implements OnInit {
     {value: 'requrojg5regr59rq56r', viewValue: 'Moe pet'},
   ];
 
+  counter = Array;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  numberReturn(length){
+    return new Array(length);
   }
 
 }
