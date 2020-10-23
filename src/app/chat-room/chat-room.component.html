@@ -9,31 +9,24 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
-      <button mat-button><mat-icon>supervisor_account</mat-icon></button>
+      <button (click)="clickMe()" mat-button><mat-icon>supervisor_account</mat-icon></button>
     </form>
   </div>
   <div class="chat-body">
     <mat-list>
-      <mat-list-item>
+      <mat-list-item *ngFor="let msg of msgs">
         <img matListAvatar src="../../assets/luka.png">
-        <h3 matLine>Mesage</h3>
-        <p matLine><span>nickman</span></p>
-      </mat-list-item>
-      <mat-list-item>
-        <h3 matLine>Mesage</h3>
-        <p matLine><span>nickman</span></p>
-        <img matListAvatar src="../../assets/luka.png">
+        <h3 matLine>{{msg.msg}}</h3>
+        <p matLine><span>{{msg.user}}</span></p>
       </mat-list-item>
     </mat-list>
   </div>
 
   <div class="chat-input">
-    <form>
       <mat-form-field class="input-message">
         <mat-label>Input message</mat-label>
         <input matInput placeholder="message" value="Hello?">
       </mat-form-field>
-      <button mat-button><mat-icon>send</mat-icon></button>
-    </form>
+      <button (click)="getList()" mat-button><mat-icon>send</mat-icon></button>
   </div>
 </div>

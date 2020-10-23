@@ -21,6 +21,10 @@ export class NavigationComponent implements OnInit {
 
   constructor() { }
 
+  clickMe(): void {
+    console.log("click")
+  }
+
   ngOnInit(): void {
   }
 
