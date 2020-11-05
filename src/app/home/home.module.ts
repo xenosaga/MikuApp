@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ChatRoomComponent } from './chat-room.component';
+import { HomeComponent } from './home.component';
 import { MaterialModule } from '../material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
-  declarations: [ChatRoomComponent],
+  declarations: [HomeComponent],
   imports: [
     CommonModule,
     MaterialModule,
     FlexLayoutModule
   ]
 })
-export class ChatRoomModule { }
+export class HomeModule { }

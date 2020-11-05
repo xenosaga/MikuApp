@@ -1,5 +1,6 @@
-import { Component, OnInit, NgZone } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { MessageService } from '../message.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-chat-room',
@@ -13,39 +14,22 @@ export class ChatRoomComponent implements OnInit {
     {value: 'requrojg5regr59rq56r', viewValue: 'Moe pet'},
   ];
 
-  msgs = [
-    {
-      user: "name",
-      msg: "message"
-    }
-  ];
+  public msgs: Array<any> = new Array<any>();
 
-  counter = Array;
+  constructor(private messageService: MessageService) { }
 
-  constructor(private ngZone: NgZone, private http: HttpClient) { }
+  getMessages() {
+    this.messageService.getMessages().subscribe(
+      (response: any) => {
+        this.msgs = response;
+        console.log(this.msgs); //log接到的資料
+      },
+      (error: HttpErrorResponse) => this.messageService.HandleError(error)
+    );
+  }
 
-  getList(): void {
-    let body = {
-      "start_time": 150000,
-      "end_time": 10000,
-      "rank": "time"
-    };
-
-    let url = "http://127.0.0.1:5000/api/v1/message";
-
-    let opeion = {
-      observe: 'respnose' as 'response'
-    };
-
-    this.http.post<any>(url, body).subscribe( res=> {
-      for(var r in res)
-      {
-        console.log(res[0])
-      }
-      console.log(this.msgs)
-    })
-
-    console.log("list")
+  getUser(id) {
+    console.log(id);
   }
 
   clickMe() : void {
@@ -53,10 +37,7 @@ export class ChatRoomComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  }
-
-  numberReturn(length){
-    return new Array(length);
+    this.getMessages();
   }
 
 }

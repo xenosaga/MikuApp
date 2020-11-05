@@ -1,4 +1,4 @@
-.panel {
+/* .panel {
   margin: 20px;
   position: absolute;
   top: 15px;
@@ -6,6 +6,17 @@
   right: 15px;
   bottom: 15px;
   min-width: 500px;
+} */
+
+.banner {
+  height: 68px;
+  position: absolute;
+  right: 0px;
+
+}
+
+.head {
+  height: 36px;
 }
 
 .chat-header {
@@ -15,8 +26,9 @@
 
 .chat-body {
   padding: 20px;
-  height: 60%;
-  max-height: 60%;
+  height: 100%;
+  width: 100%;
+  max-height: 505px;
   overflow: auto;
   background-color: bisque;
 }

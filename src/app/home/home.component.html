@@ -1,5 +1,26 @@
-<div class="grid-container">
-  <h1 class="mat-h1">Dashboard</h1>
+<h1 class="mat-h1">Dashboard</h1>
+<div fxFill fxLayout="row">
+  <div fxFlex fxLayout="column">
+    <mat-card class="dashboard-card">
+      <mat-card-header>
+        <mat-card-title>
+          title
+        </mat-card-title>
+      </mat-card-header>
+    </mat-card>
+  </div>
+  <div fxFlex fxLayout="column">
+    <mat-card class="dashboard-card">
+      <mat-card-header>
+        <mat-card-title>
+          title2
+        </mat-card-title>
+      </mat-card-header>
+    </mat-card>
+  </div>
+</div>
+
+<!-- <div class="grid-container">
   <mat-grid-list cols="3" rowHeight="350px">
     <mat-grid-tile *ngFor="let card of cards">
       <mat-card class="dashboard-card">
@@ -17,4 +38,4 @@
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>
-</div>
+</div> -->
