@@ -1,41 +1,38 @@
-<h1 class="mat-h1">Dashboard</h1>
-<div fxFill fxLayout="row">
-  <div fxFlex fxLayout="column">
-    <mat-card class="dashboard-card">
-      <mat-card-header>
-        <mat-card-title>
-          title
-        </mat-card-title>
-      </mat-card-header>
-    </mat-card>
+<div fxFill fxLayout="column" class="layout">
+  <div fxFlex="68px" class="header">
+    <h1 class="mat-h1">Dashboard</h1>
   </div>
-  <div fxFlex fxLayout="column">
-    <mat-card class="dashboard-card">
-      <mat-card-header>
-        <mat-card-title>
-          title2
-        </mat-card-title>
-      </mat-card-header>
-    </mat-card>
+  <div fxFlex fxLayout="row" class="main">
+    <div fxFlex="5%" class="aside">
+
+    </div>
+    <div fxFlex class="content">
+      <div fxLayout="row warp"
+           fxLayoutGap="32px"
+           fxLayout.lt-md="column"
+           fxLayoutAlign="flex-start">
+        <ng-container *ngFor="let card of cards">
+
+          <mat-card fxFlex="0 1 calc(25% - 32px)"
+                    fxFlex.lt-md="0 1 calc(50% - 32px)"
+                    fxFlex.lt-sm="100%">
+            <mat-card-header>
+              <mat-card-title>
+                {{card.title}}
+              </mat-card-title>
+            </mat-card-header>
+            <a routerLink={{card.link}}>
+              <img mat-card-img src={{card.img}} />
+            </a>
+            <mat-card-content class="dashboard-card-content">
+              <div>{{card.content}}</div>
+            </mat-card-content>
+          </mat-card>
+        </ng-container>
+      </div>
+    </div>
+    <div fxFlex="5%" class="bside">
+
+    </div>
   </div>
 </div>
-
-<!-- <div class="grid-container">
-  <mat-grid-list cols="3" rowHeight="350px">
-    <mat-grid-tile *ngFor="let card of cards">
-      <mat-card class="dashboard-card">
-        <mat-card-header>
-          <mat-card-title>
-            {{card.title}}
-          </mat-card-title>
-        </mat-card-header>
-        <a routerLink={{card.link}}>
-          <img mat-card-img src={{card.img}}/>
-        </a>
-        <mat-card-content class="dashboard-card-content">
-          <div>{{card.content}}</div>
-        </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
-  </mat-grid-list>
-</div> -->

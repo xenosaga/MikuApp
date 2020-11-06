@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 
 @Component({
   selector: 'app-manage',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManageComponent implements OnInit {
 
-  constructor() { }
+  applyForm: FormGroup;
+
+
+  constructor(private fb:FormBuilder) { }
 
   ngOnInit(): void {
+    this.applyForm = this.fb.group({
+      keyword:[""],
+      value:[""],
+      type:[""]
+    });
   }
 
 }

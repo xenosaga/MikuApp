@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './material/material.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -41,6 +42,8 @@ import { ChatRoomComponent } from './chat-room/chat-room.component';
     MatIconModule,
     MatButtonModule,
     LayoutModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

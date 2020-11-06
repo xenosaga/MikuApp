@@ -1,1 +1,39 @@
-<p>manage works!</p>
+<div fxFill fxLayout="column" class="layout">
+  <!-- header -->
+  <div fxFlex="68px" class="header">
+    <h1 class="mat-h1">Dashboard</h1>
+  </div>
+
+  <!-- main -->
+  <div fxFlex fxLayout="row" class="main">
+    <!-- left side -->
+    <div fxFlex="5%" class="aside">
+    </div>
+
+    <!-- center -->
+    <div fxFlex class="content">
+      <div fxLayout="row warp"
+           fxLayoutGap="32px"
+           fxLayout.lt-md="column"
+           fxLayoutAlign="flex-start">
+        <div>
+          <!-- <form [formGroup]="applyForm">
+            <div>
+              <input type="text" formControlName="keyword">
+            </div>
+            <div>
+              <input type="text" formControlName="value">
+            </div>
+            <div>
+              <input type="number" formControlName="type">
+            </div>
+          </form> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- right side -->
+    <div fxFlex="5%" class="bside">
+    </div>
+  </div>
+</div>
